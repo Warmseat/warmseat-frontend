@@ -1,21 +1,40 @@
 import React, { useState } from 'react';
 import { Navbar, Nav, Container, Form, Button } from 'react-bootstrap';
+import axios from 'axios';
 
+const queryQuestion = 'give me about 20 words on what the video is about';
 const HomePage = () => {
+    const [isloading, setIsLoading] = useState(false);
   const [youtubeUrl, setYoutubeUrl] = useState('');
-  const [videoList, setVideoList] = useState([]);
+  const [output, setOutput] = useState('');
+
 
   const handleUrlChange = (e) => {
     setYoutubeUrl(e.target.value);
   };
-
-  const handleAddVideo = () => {
-    if (youtubeUrl.trim() !== '') {
-      setVideoList([...videoList, youtubeUrl]);
-      setYoutubeUrl('');
+  // POST request using axios 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+  axios.post('https://i5qz7415i0.execute-api.us-west-2.amazonaws.com/Production/queryvideo', {
+    youtubeURL: youtubeUrl,
+    query: queryQuestion,
+  })
+  .then((res) => {
+    if (res.status === 200) {
+        console.log('POST request went through', res.data);
+        setOutput(res.data);
+    } else {
+        console.error('Post request didnt go through:', res.status, res.data);
     }
+  })
+  .catch((err) => {
+    console.error('Post Request Error:');
+  })
+  .finally(() => {
+    setIsLoading(false);
+  });
   };
-
   return (
     <div>
       <Navbar bg="dark" variant="dark">
@@ -31,7 +50,7 @@ const HomePage = () => {
       </Navbar>
 
       <Container style={{ marginTop: '20px' }}>
-        <h1>Enter YouTube URLs</h1>
+        <h1>Enter YouTube URL</h1>
         <Form>
           <Form.Group>
             <Form.Control
@@ -41,12 +60,13 @@ const HomePage = () => {
               onChange={handleUrlChange}
             />
           </Form.Group>
-          <Button variant="primary" onClick={handleAddVideo}>
-            Add
+          <Button variant="primary" type='submit' onClick={handleSubmit}>
+            Summarize
           </Button>
+        <div>{isloading && 'Loading... Please Wait!'}</div>
         </Form>
 
-        <h2>Added Videos:</h2>
+        {/* <h2>Added Videos:</h2>
         <ul>
           {videoList.map((url, index) => (
             <li key={index}>
@@ -55,7 +75,8 @@ const HomePage = () => {
               </a>
             </li>
           ))}
-        </ul>
+        </ul> */}
+        <div style={{paddingTop: 20}}>{output}</div>
       </Container>
     </div>
   );
