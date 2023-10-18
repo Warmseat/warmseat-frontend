@@ -37,7 +37,8 @@ const HomePage = () => {
   };
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
+     {/* took this out of this file and put it in header.jsx. */}
+      {/* <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="/">WarmSeat</Navbar.Brand>
           <Nav className="ml-auto">
@@ -47,7 +48,7 @@ const HomePage = () => {
             <Button variant="outline-light" onClick={() => alert('Log out clicked')}>Log Out</Button>
           </Nav>
         </Container>
-      </Navbar>
+      </Navbar> */}
 
       <Container style={{ marginTop: '20px' }}>
         <h1>Enter YouTube URL</h1>
