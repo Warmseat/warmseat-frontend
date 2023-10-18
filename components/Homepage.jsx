@@ -2,12 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
-function addLineBreaks(text) {
-  if (!text) return text;
-
-  return text.replace(/\. /g, '.\n');
-}
-
 // const queryQuestion = 'give me about 20 words on what the video is about';
 const HomePage = () => {
   const [isloading, setIsLoading] = useState(false);
@@ -119,7 +113,7 @@ const HomePage = () => {
           <div className='output-container'>
             <div style={{ paddingTop: 20 }}>
               <pre className='queryOutput'>
-                {isloading ? 'Loading... Please Wait!' : ( addLineBreaks(output) || 'No results available yet. Please enter the URL, your query/question, and then click "Submit" to see the results.' )}
+                {isloading ? 'Loading... Please Wait!' : ( output || 'No results available yet. Please enter the URL, your query/question, and then click "Submit" to see the results.' )}
               </pre>
             </div>
           </div>

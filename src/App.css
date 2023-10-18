@@ -155,8 +155,8 @@ div.history-container {
   text-align: left;
   white-space: pre-wrap;
   max-height: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  /* word-wrap: break-word;
+  overflow-wrap: break-word; */
 }
 
 button.query-btn {
