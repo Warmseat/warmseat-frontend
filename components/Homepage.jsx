@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
+// const serverURL = 'https://i5qz7415i0.execute-api.us-west-2.amazonaws.com/Production/queryvideo';
+const serverURL = 'https://warmseat-backend.onrender.com/queryvideo';
 // const queryQuestion = 'give me about 20 words on what the video is about';
+
 const HomePage = () => {
   const [isloading, setIsLoading] = useState(false);
   const [youtubeUrl, setYoutubeUrl] = useState('');
@@ -36,7 +39,7 @@ const HomePage = () => {
     e.preventDefault();
     setIsLoading(true);
 
-  axios.post('https://i5qz7415i0.execute-api.us-west-2.amazonaws.com/Production/queryvideo', {
+  axios.post(serverURL, {
     youtubeURL: youtubeUrl,
     query: query,
   })
@@ -79,7 +82,7 @@ const HomePage = () => {
         <div className='query-container'>
           <Form className='form-container'>
             <Form.Group className='form-container'>
-              <Form.Label>YouTube URL</Form.Label>
+              <Form.Label>YouTube URL.</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter YouTube URL"                  value={youtubeUrl}
