@@ -8,3 +8,85 @@
  display: flex;
   flex-direction: column;
 }
+
+h1.team-title {
+  color: #404565;
+  font-family: 'Jomhuria';
+  font-weight: 600;
+  text-align: center;
+}
+
+img.warmseat-logo {
+  width: 60px;
+  height: 50px;
+}
+
+span.navbar-brand {
+  display: flex;
+  padding: 0;
+  height: 48px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.text-icon {
+  color: #cbc4ca;  
+  font-size: 25px;
+  font-family: 'Jomhuria';
+}
+
+p.text-icon {
+  margin: 0;
+  height: 40px;
+}
+
+img.about-pic {
+  width: 300px;
+  height: 300px;
+  align-self: center;
+  border-radius: 10%;
+}
+
+a.links {
+  margin-left: 3px;
+  background-image: none;
+  color: #404565;
+  text-decoration: none;
+  font-family: 'Jomhuria', cursive;
+}
+
+a.links:hover {
+  color: #404565;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: background 0.3s;
+}
+
+div#team {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div.about-card {
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+  margin: 0 5px;
+  margin-top: 5px;
+  padding: 10px;
+  align-items: center;
+  border-radius: 8px;
+  color: #404565;
+  background-color: #cbc4ca;
+}
+
+div.card ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
