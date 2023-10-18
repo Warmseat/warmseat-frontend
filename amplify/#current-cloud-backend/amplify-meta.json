@@ -1,0 +1,58 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-warmseat-dev-125923-authRole",
+      "UnauthRoleArn": "arn:aws:iam::445715241945:role/amplify-warmseat-dev-125923-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::445715241945:role/amplify-warmseat-dev-125923-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-warmseat-dev-125923-deployment",
+      "UnauthRoleName": "amplify-warmseat-dev-125923-unauthRole",
+      "StackName": "amplify-warmseat-dev-125923",
+      "StackId": "arn:aws:cloudformation:us-west-2:445715241945:stack/amplify-warmseat-dev-125923/ab5fabb0-6d27-11ee-b4bb-0290675dced1",
+      "AmplifyAppId": "d349scurcxjg3a"
+    }
+  },
+  "auth": {
+    "warmseat5f13b39a": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-warmseat-dev-125923-deployment/amplify-cfn-templates/auth/warmseat5f13b39a-cloudformation-template.json",
+        "logicalId": "authwarmseat5f13b39a"
+      },
+      "lastPushTimeStamp": "2023-10-17T20:46:33.326Z",
+      "output": {
+        "UserPoolId": "us-west-2_f4IUtL299",
+        "AppClientIDWeb": "3e2pbbhgfk9tb3rnvrbt2de5fp",
+        "AppClientID": "70c7cu7gcv2sp9741seufsuabd",
+        "HostedUIDomain": "warmseat5f13b39a-5f13b39a-dev",
+        "IdentityPoolId": "us-west-2:e85570c6-d832-4979-9f62-5c398b5fead2",
+        "UserPoolArn": "arn:aws:cognito-idp:us-west-2:445715241945:userpool/us-west-2_f4IUtL299",
+        "IdentityPoolName": "warmseat5f13b39a_identitypool_5f13b39a__dev",
+        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:5173/\",\"https://warmseat.auth.us-west-2.amazoncognito.com/\"],\"LogoutURLs\":[\"http://localhost:5173/\",\"https://warmseat.auth.us-west-2.amazoncognito.com/\"]}",
+        "UserPoolName": "warmseat5f13b39a_userpool_5f13b39a"
+      },
+      "lastPushDirHash": "f0u28YScX9ZC+W3L+/kfKcOTuhI="
+    }
+  }
+}
