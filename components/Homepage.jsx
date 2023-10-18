@@ -1,12 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
-
-function addLineBreaks(text) {
-  if (!text) return text;
-
-  return text.replace(/\. /g, '.\n');
-}
 
 // const queryQuestion = 'give me about 20 words on what the video is about';
 const HomePage = () => {
@@ -14,7 +8,20 @@ const HomePage = () => {
   const [youtubeUrl, setYoutubeUrl] = useState('');
   const [query, setQuery] = useState('');
   const [output, setOutput] = useState('');
+  const [history, setHistory] = useState([]);
 
+  useEffect(() => {
+    const initialYoutubeUrl = localStorage.getItem('youtubeUrl') || '';
+    const initialQuery = localStorage.getItem('query') || '';
+    
+    setYoutubeUrl(initialYoutubeUrl);
+    setQuery(initialQuery);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('youtubeUrl', youtubeUrl);
+    localStorage.setItem('query', query);
+  }, [youtubeUrl, query]);
 
   const handleUrlChange = (e) => {
     setYoutubeUrl(e.target.value);
@@ -38,7 +45,10 @@ const HomePage = () => {
         console.log('POST request went through', res.data);
         setOutput(res.data.body);
         document.querySelector('.output-container', 'pre.queryOutput').classList.add('expanded');
-    } else {
+        setHistory([...history, { youtubeUrl, query }]);
+        setYoutubeUrl('');
+        setQuery('');    
+      } else {
         console.error('Post request didnt go through:', res.status, res.data);
     }
   })
@@ -88,11 +98,22 @@ const HomePage = () => {
             <button className='query-btn' onClick={handleSubmit}>
               Submit
             </button>
+            <div className='history-container'>
+              <h2 className='history-title'>History:</h2>
+                <ul>
+                  {history.map((item, index) => (
+                    <li key={index}>
+                      <strong>YouTube URL:</strong> {item.youtubeUrl},
+                      <strong>Query:</strong> {item.query}
+                    </li>
+                  ))}
+                </ul>
+            </div>
           </Form>
           <div className='output-container'>
             <div style={{ paddingTop: 20 }}>
               <pre className='queryOutput'>
-                {isloading ? 'Loading... Please Wait!' : ( addLineBreaks(output) || 'No results available yet. Please enter the URL, your query/question, and then click "Submit" to see the results.' )}
+                {isloading ? 'Loading... Please Wait!' : ( output || 'No results available yet. Please enter the URL, your query/question, and then click "Submit" to see the results.' )}
               </pre>
             </div>
           </div>

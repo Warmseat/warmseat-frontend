@@ -142,10 +142,10 @@ div.card ul {
   margin: 0;
 }
 
-pre.queryOutput {
+pre.queryOutput,
+div.history-container {
   padding: 20px;
   margin: 10px;
-  margin-left: 50px;
   border: 0;
   border-radius: 8px;
   font-family: 'Jomhuria';
@@ -155,8 +155,8 @@ pre.queryOutput {
   text-align: left;
   white-space: pre-wrap;
   max-height: 100%;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  /* word-wrap: break-word;
+  overflow-wrap: break-word; */
 }
 
 button.query-btn {
