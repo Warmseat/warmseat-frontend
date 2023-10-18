@@ -46,8 +46,8 @@ const HomePage = () => {
         setOutput(res.data.body);
         document.querySelector('.output-container', 'pre.queryOutput').classList.add('expanded');
         setHistory([...history, { youtubeUrl, query }]);
-        setYoutubeUrl('');
-        setQuery('');    
+        // setYoutubeUrl(''); this clears out the url after submit
+        setQuery('');  // this clears out the query after submit
       } else {
         console.error('Post request didnt go through:', res.status, res.data);
     }
