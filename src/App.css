@@ -1,12 +1,63 @@
-/* #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+div.query-container {
   display: flex;
-} */
+  flex-direction: row;
+  width: 100%;
+}
+
+form.form-container {
+  max-width: 350px;
+  flex: 1;
+}
+
+div.output-container {
+  flex: 1;
+  height: 200px;
+  width: 300px;
+  overflow: hidden;
+}
+
+div.output-container.expanded {
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+}
+
+pre.queryOutput.expanded {
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+}
+
 .app {
- display: flex;
+  display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+h1.app-title {
+  font-family: 'Jomhuria';
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+label.form-label {
+  margin: 0;
+  margin-top: 10px;
+  font-family: 'Jomhuria';
+  font-weight: 600;
+}
+
+.form-control {
+  max-width: 450px;
 }
 
 h1.team-title {
@@ -89,4 +140,42 @@ div.card ul {
   text-align: center;
   padding: 0;
   margin: 0;
+}
+
+pre.queryOutput {
+  padding: 20px;
+  margin: 10px;
+  margin-left: 50px;
+  border: 0;
+  border-radius: 8px;
+  font-family: 'Jomhuria';
+  font-size: 15px;
+  color: #404565;
+  background-color: #cbc4ca;
+  text-align: left;
+  white-space: pre-wrap;
+  max-height: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+button.query-btn {
+  align-items: center;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 8px;  
+  box-sizing: border-box;
+  border-color: linear-gradient(144deg,#dec62d, #32303a 50%,#dec62d);
+  color: #FFFFFF;
+  font-family: 'Jomhuria';  
+  font-size: 15px;
+  line-height: 1em;
+  padding: 5px;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+button.query-btn:hover {
+  background-image: linear-gradient(144deg,#dec62d, #32303a 50%,#dec62d);
 }

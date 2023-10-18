@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import { Navbar, Nav, Container, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
-const queryQuestion = 'give me about 20 words on what the video is about';
+function addLineBreaks(text) {
+  if (!text) return text;
+
+  return text.replace(/\. /g, '.\n');
+}
+
+// const queryQuestion = 'give me about 20 words on what the video is about';
 const HomePage = () => {
-    const [isloading, setIsLoading] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
   const [youtubeUrl, setYoutubeUrl] = useState('');
+  const [query, setQuery] = useState('');
   const [output, setOutput] = useState('');
 
 
@@ -13,18 +20,24 @@ const HomePage = () => {
     setYoutubeUrl(e.target.value);
   };
   
+  const handleQueryChange = (e) => {
+    setQuery(e.target.value);
+  };
+
   // POST request using axios 
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
+
   axios.post('https://i5qz7415i0.execute-api.us-west-2.amazonaws.com/Production/queryvideo', {
     youtubeURL: youtubeUrl,
-    query: queryQuestion,
+    query: query,
   })
   .then((res) => {
     if (res.status === 200) {
         console.log('POST request went through', res.data);
         setOutput(res.data.body);
+        document.querySelector('.output-container', 'pre.queryOutput').classList.add('expanded');
     } else {
         console.error('Post request didnt go through:', res.status, res.data);
     }
@@ -52,21 +65,38 @@ const HomePage = () => {
       </Navbar> */}
 
       <Container style={{ marginTop: '20px' }}>
-        <h1>Enter YouTube URL</h1>
-        <Form>
-          <Form.Group>
-            <Form.Control
-              type="text"
-              placeholder="Enter YouTube URL"
-              value={youtubeUrl}
-              onChange={handleUrlChange}
-            />
-          </Form.Group>
-          <Button variant="primary" type='submit' onClick={handleSubmit}>
-            Summarize
-          </Button>
-        <div>{isloading && 'Loading... Please Wait!'}</div>
-        </Form>
+        <h1 className='app-title'>Welcome to WarmSeat</h1>
+        <div className='query-container'>
+          <Form className='form-container'>
+            <Form.Group className='form-container'>
+              <Form.Label>YouTube URL</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter YouTube URL"                  value={youtubeUrl}
+                onChange={handleUrlChange}
+              />
+            </Form.Group>
+            <Form.Group className='form-container'>
+              <Form.Label>Query</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter your query"
+                value={query}
+                onChange={handleQueryChange}
+              />
+            </Form.Group>
+            <button className='query-btn' onClick={handleSubmit}>
+              Submit
+            </button>
+          </Form>
+          <div className='output-container'>
+            <div style={{ paddingTop: 20 }}>
+              <pre className='queryOutput'>
+                {isloading ? 'Loading... Please Wait!' : ( addLineBreaks(output) || 'No results available yet. Please enter the URL, your query/question, and then click "Submit" to see the results.' )}
+              </pre>
+            </div>
+          </div>
+        </div>
 
         {/* <h2>Added Videos:</h2>
         <ul>
@@ -78,7 +108,6 @@ const HomePage = () => {
             </li>
           ))}
         </ul> */}
-        <div style={{paddingTop: 20}}>{output}</div>
       </Container>
     </div>
   );
