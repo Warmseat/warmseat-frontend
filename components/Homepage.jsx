@@ -12,6 +12,7 @@ const HomePage = () => {
   const handleUrlChange = (e) => {
     setYoutubeUrl(e.target.value);
   };
+  
   // POST request using axios 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +24,7 @@ const HomePage = () => {
   .then((res) => {
     if (res.status === 200) {
         console.log('POST request went through', res.data);
-        setOutput(res.data);
+        setOutput(res.data.body);
     } else {
         console.error('Post request didnt go through:', res.status, res.data);
     }
