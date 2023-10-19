@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-warmseatfrontend-dev-114511-authRole",
+      "UnauthRoleArn": "arn:aws:iam::445715241945:role/amplify-warmseatfrontend-dev-114511-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::445715241945:role/amplify-warmseatfrontend-dev-114511-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-warmseatfrontend-dev-114511-deployment",
+      "UnauthRoleName": "amplify-warmseatfrontend-dev-114511-unauthRole",
+      "StackName": "amplify-warmseatfrontend-dev-114511",
+      "StackId": "arn:aws:cloudformation:us-west-2:445715241945:stack/amplify-warmseatfrontend-dev-114511/a291cb60-6eaf-11ee-9dc2-0a5a59d1043b",
+      "AmplifyAppId": "d12c2uv9bs5wj9"
+    },
+    "categories": {
+      "auth": {
+        "warmseatfrontend75bf20e3": {}
+      }
+    }
+  }
+}

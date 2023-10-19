@@ -1,26 +1,28 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-warmseat-dev-125923-authRole",
-      "UnauthRoleArn": "arn:aws:iam::445715241945:role/amplify-warmseat-dev-125923-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::445715241945:role/amplify-warmseat-dev-125923-authRole",
+      "AuthRoleName": "amplify-warmseatfrontend-dev-114511-authRole",
+      "UnauthRoleArn": "arn:aws:iam::445715241945:role/amplify-warmseatfrontend-dev-114511-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::445715241945:role/amplify-warmseatfrontend-dev-114511-authRole",
       "Region": "us-west-2",
-      "DeploymentBucketName": "amplify-warmseat-dev-125923-deployment",
-      "UnauthRoleName": "amplify-warmseat-dev-125923-unauthRole",
-      "StackName": "amplify-warmseat-dev-125923",
-      "StackId": "arn:aws:cloudformation:us-west-2:445715241945:stack/amplify-warmseat-dev-125923/ab5fabb0-6d27-11ee-b4bb-0290675dced1",
-      "AmplifyAppId": "d349scurcxjg3a"
+      "DeploymentBucketName": "amplify-warmseatfrontend-dev-114511-deployment",
+      "UnauthRoleName": "amplify-warmseatfrontend-dev-114511-unauthRole",
+      "StackName": "amplify-warmseatfrontend-dev-114511",
+      "StackId": "arn:aws:cloudformation:us-west-2:445715241945:stack/amplify-warmseatfrontend-dev-114511/a291cb60-6eaf-11ee-9dc2-0a5a59d1043b",
+      "AmplifyAppId": "d12c2uv9bs5wj9"
     }
   },
   "auth": {
-    "warmseat5f13b39a": {
+    "warmseatfrontend75bf20e3": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
       "frontendAuthConfig": {
         "socialProviders": [],
-        "usernameAttributes": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
         "signupAttributes": [
           "EMAIL"
         ],
@@ -37,22 +39,20 @@
         ]
       },
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-warmseat-dev-125923-deployment/amplify-cfn-templates/auth/warmseat5f13b39a-cloudformation-template.json",
-        "logicalId": "authwarmseat5f13b39a"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-warmseatfrontend-dev-114511-deployment/amplify-cfn-templates/auth/warmseatfrontend75bf20e3-cloudformation-template.json",
+        "logicalId": "authwarmseatfrontend75bf20e3"
       },
-      "lastPushTimeStamp": "2023-10-17T20:46:33.326Z",
+      "lastPushTimeStamp": "2023-10-19T18:48:49.768Z",
       "output": {
-        "UserPoolId": "us-west-2_f4IUtL299",
-        "AppClientIDWeb": "3e2pbbhgfk9tb3rnvrbt2de5fp",
-        "AppClientID": "70c7cu7gcv2sp9741seufsuabd",
-        "HostedUIDomain": "warmseat5f13b39a-5f13b39a-dev",
-        "IdentityPoolId": "us-west-2:e85570c6-d832-4979-9f62-5c398b5fead2",
-        "UserPoolArn": "arn:aws:cognito-idp:us-west-2:445715241945:userpool/us-west-2_f4IUtL299",
-        "IdentityPoolName": "warmseat5f13b39a_identitypool_5f13b39a__dev",
-        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:5173/\",\"https://warmseat.auth.us-west-2.amazoncognito.com/\"],\"LogoutURLs\":[\"http://localhost:5173/\",\"https://warmseat.auth.us-west-2.amazoncognito.com/\"]}",
-        "UserPoolName": "warmseat5f13b39a_userpool_5f13b39a"
+        "UserPoolId": "us-west-2_IwDPJ0UTQ",
+        "AppClientIDWeb": "4t11lf6qo6b7iuttd20ccmt196",
+        "AppClientID": "2181s5lhnt103lf6p65tdv27rl",
+        "IdentityPoolId": "us-west-2:9be96f65-c84f-4eb3-8945-3dedc8706098",
+        "UserPoolArn": "arn:aws:cognito-idp:us-west-2:445715241945:userpool/us-west-2_IwDPJ0UTQ",
+        "IdentityPoolName": "warmseatfrontend75bf20e3_identitypool_75bf20e3__dev",
+        "UserPoolName": "warmseatfrontend75bf20e3_userpool_75bf20e3"
       },
-      "lastPushDirHash": "f0u28YScX9ZC+W3L+/kfKcOTuhI="
+      "lastPushDirHash": "LxyFFIJBitA3ul6D2dnvWwAUuIs="
     }
   }
 }
