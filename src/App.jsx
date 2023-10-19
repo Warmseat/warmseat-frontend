@@ -5,16 +5,29 @@ import Home from "../components/Homepage";
 import About from "../components/About";
 import Header from '../components/Header';
 
-function App() {
+import { Amplify } from 'aws-amplify';
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+import awsExports from './aws-exports';
+Amplify.configure(awsExports);
+
+
+function App({ signOut, user }) {
+  console.log('user object:', user.attributes.email);
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/about" element={<About />} />
-      </Routes>
-    </Router>
+    <>
+        <h1>Hello {user.attributes.email}</h1>
+        <button style={{ color: 'white' }} onClick={signOut}>Sign out</button>
+        <Router>
+        <Header />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
-export default App;
+export default withAuthenticator(App);

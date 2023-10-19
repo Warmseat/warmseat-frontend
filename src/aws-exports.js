@@ -3,25 +3,14 @@
 
 const awsmobile = {
     "aws_project_region": "us-west-2",
-    "aws_cognito_identity_pool_id": "us-west-2:e85570c6-d832-4979-9f62-5c398b5fead2",
+    "aws_cognito_identity_pool_id": "us-west-2:9be96f65-c84f-4eb3-8945-3dedc8706098",
     "aws_cognito_region": "us-west-2",
-    "aws_user_pools_id": "us-west-2_f4IUtL299",
-    "aws_user_pools_web_client_id": "3e2pbbhgfk9tb3rnvrbt2de5fp",
-    "oauth": {
-        "domain": "warmseat5f13b39a-5f13b39a-dev.auth.us-west-2.amazoncognito.com",
-        "scope": [
-            "phone",
-            "email",
-            "openid",
-            "profile",
-            "aws.cognito.signin.user.admin"
-        ],
-        "redirectSignIn": "http://localhost:5173/,https://warmseat.auth.us-west-2.amazoncognito.com/",
-        "redirectSignOut": "http://localhost:5173/,https://warmseat.auth.us-west-2.amazoncognito.com/",
-        "responseType": "code"
-    },
-    "federationTarget": "COGNITO_USER_POOLS",
-    "aws_cognito_username_attributes": [],
+    "aws_user_pools_id": "us-west-2_IwDPJ0UTQ",
+    "aws_user_pools_web_client_id": "4t11lf6qo6b7iuttd20ccmt196",
+    "oauth": {},
+    "aws_cognito_username_attributes": [
+        "EMAIL"
+    ],
     "aws_cognito_social_providers": [],
     "aws_cognito_signup_attributes": [
         "EMAIL"

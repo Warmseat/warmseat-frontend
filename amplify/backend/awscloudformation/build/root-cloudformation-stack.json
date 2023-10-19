@@ -152,15 +152,15 @@
         }
       }
     },
-    "authwarmseat5f13b39a": {
+    "authwarmseatfrontend75bf20e3": {
       "Type": "AWS::CloudFormation::Stack",
       "Properties": {
-        "TemplateURL": "https://s3.amazonaws.com/amplify-warmseat-dev-125923-deployment/amplify-cfn-templates/auth/warmseat5f13b39a-cloudformation-template.json",
+        "TemplateURL": "https://s3.amazonaws.com/amplify-warmseatfrontend-dev-114511-deployment/amplify-cfn-templates/auth/warmseatfrontend75bf20e3-cloudformation-template.json",
         "Parameters": {
-          "identityPoolName": "warmseat5f13b39a_identitypool_5f13b39a",
+          "identityPoolName": "warmseatfrontend75bf20e3_identitypool_75bf20e3",
           "allowUnauthenticatedIdentities": false,
-          "resourceNameTruncated": "warmse5f13b39a",
-          "userPoolName": "warmseat5f13b39a_userpool_5f13b39a",
+          "resourceNameTruncated": "warmse75bf20e3",
+          "userPoolName": "warmseatfrontend75bf20e3_userpool_75bf20e3",
           "autoVerifiedAttributes": "email",
           "mfaConfiguration": "OFF",
           "mfaTypes": "SMS Text Message",
@@ -177,13 +177,14 @@
           "userpoolClientRefreshTokenValidity": 30,
           "userpoolClientWriteAttributes": "email",
           "userpoolClientReadAttributes": "email",
-          "userpoolClientLambdaRole": "warmse5f13b39a_userpoolclient_lambda_role",
+          "userpoolClientLambdaRole": "warmse75bf20e3_userpoolclient_lambda_role",
           "userpoolClientSetAttributes": false,
-          "sharedId": "5f13b39a",
-          "resourceName": "warmseat5f13b39a",
+          "sharedId": "75bf20e3",
+          "resourceName": "warmseatfrontend75bf20e3",
           "authSelections": "identityPoolAndUserPool",
           "useDefault": "default",
-          "hostedUI": false,
+          "usernameAttributes": "email",
+          "triggers": "{}",
           "userPoolGroupList": "",
           "serviceName": "Cognito",
           "usernameCaseSensitive": false,
@@ -202,7 +203,6 @@
           },
           "breakCircularDependency": true,
           "dependsOn": "",
-          "authProviders": "",
           "env": "dev"
         }
       }
@@ -211,7 +211,7 @@
       "DependsOn": [
         "AuthRole",
         "UnauthRole",
-        "authwarmseat5f13b39a"
+        "authwarmseatfrontend75bf20e3"
       ],
       "Type": "AWS::Lambda::Function",
       "Properties": {
@@ -319,7 +319,7 @@
         },
         "idpId": {
           "Fn::GetAtt": [
-            "authwarmseat5f13b39a",
+            "authwarmseatfrontend75bf20e3",
             "Outputs.IdentityPoolId"
           ]
         },
