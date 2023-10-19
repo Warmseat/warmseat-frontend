@@ -35,7 +35,8 @@ function Header() {
       <Nav className="ml-auto">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/about">About</Nav.Link>
-        <Button variant="outline-light" onClick={() => alert('Log out clicked')}>Log Out</Button>
+        {/* <Button variant="outline-light" onClick={() => alert('Log out clicked')}>Log Out</Button> */}
+        {/* <Button variant="outline-light" onClick={signout}>Log Out</Button> */}
       </Nav>
     </Navbar>
   )
