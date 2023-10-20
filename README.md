@@ -90,11 +90,11 @@ Conversation Chat Agent
 
 ### Wireframe
 
-![Warmseat Wireframe](assets/warmseatWF.png)
+![Warmseat Wireframe](public/warmseatWF.png)
 
 ### Domain Model
 
-![Warmseat Domain Model](assets/warmseatDM.png)
+![Warmseat Domain Model](public/warmseatDM.png)
 
 ### Deployed Server
 
@@ -104,7 +104,7 @@ Conversation Chat Agent
 
 - Frontend
 
-<!-- frontend link here -->
+    <https://warmseat.netlify.app/>
 
 ## Group Members
 
@@ -198,14 +198,18 @@ Conversation Chat Agent
     - `Main` > `Staging` > `Local`. Everything will be located collectively on each team member's laptop, and when ready will be sent to a staging branch for review before being merged into main.
 
 4. Will you be using a PR review workflow? If so, consider:
-*  How many people must review a PR?
-- We are going to have 1 people review.
-* Who merges PRs?
-- Whoever is the last to approve the PR.
-* How often will you merge?
-- Once we’ve successfully implemented any features then we will ACP and merge.
-* How will you communicate that it’s time to merge?
-- We will discuss what we’ve gotten done and make sure there are no conflicts, and once we collectively agree will merge.
+
+- How many people must review a PR?
+  - We are going to have 1 people review.
+
+- Who merges PRs?
+  - Whoever is the last to approve the PR.
+
+- How often will you merge?
+  - Once we’ve successfully implemented any features then we will ACP and merge.
+
+- How will you communicate that it’s time to merge?
+  - We will discuss what we’ve gotten done and make sure there are no conflicts, and once we collectively agree will merge.
 
 - How many people must review a PR?
   - We are going to have 1 people review.
