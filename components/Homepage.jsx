@@ -6,12 +6,15 @@ import axios from 'axios';
 const serverURL = 'https://warmseat-backend.onrender.com/queryvideo';
 // const queryQuestion = 'give me about 20 words on what the video is about';
 
-const HomePage = () => {
+const HomePage = ({ user, signOut }) => {
   const [isloading, setIsLoading] = useState(false);
   const [youtubeUrl, setYoutubeUrl] = useState('');
   const [query, setQuery] = useState('');
   const [output, setOutput] = useState('');
   const [history, setHistory] = useState([]);
+  const userEmail = user.attributes.email;
+
+  const userName = userEmail.split('@')[0];
 
   useEffect(() => {
     const initialYoutubeUrl = localStorage.getItem('youtubeUrl') || '';
@@ -78,7 +81,7 @@ const HomePage = () => {
       </Navbar> */}
 
       <Container style={{ marginTop: '20px' }}>
-        <h1 className='app-title'>Welcome to WarmSeat</h1>
+        <h1 className='app-title'>Welcome to WarmSeat, {userName}</h1>
         <div className='query-container'>
           <Form className='form-container'>
             <Form.Group className='form-container'>
