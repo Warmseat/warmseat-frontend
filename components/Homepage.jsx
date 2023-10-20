@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Container, Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+
 // const serverURL = 'https://i5qz7415i0.execute-api.us-west-2.amazonaws.com/Production/queryvideo';
 const serverURL = 'https://warmseat-backend.onrender.com/queryvideo';
 // const queryQuestion = 'give me about 20 words on what the video is about';
@@ -130,4 +134,4 @@ const HomePage = ({ user, signOut }) => {
   );
 };
 
-export default HomePage;
+export default withAuthenticator(HomePage);
