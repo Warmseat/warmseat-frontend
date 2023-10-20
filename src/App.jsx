@@ -21,6 +21,7 @@ function App({ signOut, user }) {
         <button style={{ color: 'white' }} onClick={signOut}>Sign out</button> */}
         <Router>
         <Header />
+        <hr className='border' />
         <Routes>
           <Route exact path="/" element={<Home user={user} signOut={signOut} />} />
           <Route exact path="/about" element={<About />} />
