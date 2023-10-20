@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import WarmSeatLogo from '../assets/warmseat-logo.png'
 
+import { withAuthenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+
 function Header({ signOut, user }) {
   return (
     <Navbar>
@@ -25,4 +29,4 @@ function Header({ signOut, user }) {
   )
 }
 
-export default Header;
+export default withAuthenticator(Header);
