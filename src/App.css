@@ -87,7 +87,7 @@ span.navbar-brand {
 }
 
 .text-icon {
-  color: #cbc4ca;  
+  color: #b8b7b8;  
   font-size: 25px;
   font-family: 'Jomhuria';
 }
@@ -95,6 +95,12 @@ span.navbar-brand {
 p.text-icon {
   margin: 0;
   height: 40px;
+}
+
+a.nav-link {
+  color: #b8b7b8;  
+  font-size: 15px;
+  font-family: 'Jomhuria';
 }
 
 img.about-pic {
@@ -149,9 +155,24 @@ div.card ul {
   margin: 0;
 }
 
-pre.queryOutput,
-div.history-container {
+pre.queryOutput {
   padding: 20px;
+  margin: 10px;
+  border: 0;
+  border-radius: 8px;
+  font-family: 'Jomhuria';
+  font-size: 15px;
+  color: #404565;
+  background-color: #b8b7b8;
+  text-align: left;
+  white-space: pre-wrap;
+  max-height: 100%;
+  /* word-wrap: break-word;
+  overflow-wrap: break-word; */
+}
+
+div.history-container {
+  padding: 10px;
   margin: 10px;
   border: 0;
   border-radius: 8px;
@@ -192,7 +213,7 @@ button.signOut-btn {
   border: 3px solid transparent; /* Set the border width as needed */
   border-radius: 8px;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #b8b7b8;
   font-family: 'Jomhuria';
   font-size: 15px;
   line-height: 1em;
