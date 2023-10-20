@@ -3,7 +3,7 @@
 const teamMembers = [
   {
     name: 'Paul Brown',
-    imageSrc: 'public/paul.png',
+    imageSrc: './assets/paul.png',
     githubLink: 'https://github.com/0xQuasark',
     linkedinLink: 'https://www.linkedin.com/in/tallpaulbrown/',
     bio: [
@@ -13,7 +13,7 @@ const teamMembers = [
   },
   {
     name: 'Samaad Turner',
-    imageSrc: 'public/samaad.png',
+    imageSrc: './assets/samaad.png',
     githubLink: 'https://github.com/SamaadTurner',
     linkedinLink: 'https://www.linkedin.com/in/samaad-turner/',
     bio: [
@@ -23,7 +23,7 @@ const teamMembers = [
   },
   {
     name: 'Sydney Mae Pagalan',
-    imageSrc: 'public/sydney.png',
+    imageSrc: './assets/sydney.png',
     githubLink: 'https://github.com/sfpagalan',
     linkedinLink: 'https://www.linkedin.com/in/sfpagalan/',
     bio: [

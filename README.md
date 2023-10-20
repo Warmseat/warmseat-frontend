@@ -90,11 +90,11 @@ Conversation Chat Agent
 
 ### Wireframe
 
-![Warmseat Wireframe](public/warmseatWF.png)
+![Warmseat Wireframe](./assets/warmseatWF.png)
 
 ### Domain Model
 
-![Warmseat Domain Model](public/warmseatDM.png)
+![Warmseat Domain Model](./assets/warmseatDM.png)
 
 ### Deployed Server
 

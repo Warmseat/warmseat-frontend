@@ -112,7 +112,7 @@ const HomePage = ({ user, signOut }) => {
             <div style={{ paddingTop: 20 }}>
               <pre className='queryOutput'>
                 {isloading ? ( 
-                    <img className='loader-img' src='public/duck-loading.gif' alt='this is loading....'/> 
+                    <img className='loader-img' src='./assets/duck-loading.gif' alt='this is loading....'/> 
                 ) : ( output || 'No results available yet. Please enter the URL, your query/question, and then click "Submit" to see the results.' )}
               </pre>
             </div>
