@@ -5,7 +5,7 @@ import WarmSeatLogo from '../assets/warmseat-logo.png'
 
 function Header({ signOut, user }) {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar>
       <Navbar.Brand>
         <img
             src={WarmSeatLogo}
@@ -19,7 +19,7 @@ function Header({ signOut, user }) {
       <Nav className="ml-auto">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/about">About</Nav.Link>
-        <button className='signOut-btn' style={{ color: 'white' }} onClick={signOut}>Sign out</button>
+        <button className='signOut-btn' onClick={signOut}>Sign out</button>
       </Nav>
     </Navbar>
   )

@@ -53,7 +53,8 @@ const HomePage = ({ user, signOut }) => {
         document.querySelector('.output-container', 'pre.queryOutput').classList.add('expanded');
         setHistory([...history, { youtubeUrl, query }]);
         // setYoutubeUrl(''); this clears out the url after submit
-        setQuery('');  // this clears out the query after submit
+        setQuery('');
+          // this clears out the query after submit
       } else {
         console.error('Post request didnt go through:', res.status, res.data);
     }
@@ -67,19 +68,6 @@ const HomePage = ({ user, signOut }) => {
   };
   return (
     <div>
-     {/* took this out of this file and put it in header.jsx. */}
-      {/* <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="/">WarmSeat</Navbar.Brand>
-          <Nav className="ml-auto">
-            <Nav.Link href="/about">About</Nav.Link>
-            <Nav.Link href="/saved-videos">Saved Videos</Nav.Link>
-            <Nav.Link href="/query-videos">Query Videos</Nav.Link>
-            <Button variant="outline-light" onClick={() => alert('Log out clicked')}>Log Out</Button>
-          </Nav>
-        </Container>
-      </Navbar> */}
-
       <Container style={{ marginTop: '20px' }}>
         <h1 className='app-title'>Welcome to WarmSeat, {userName}</h1>
         <div className='query-container'>
@@ -119,7 +107,9 @@ const HomePage = ({ user, signOut }) => {
           <div className='output-container'>
             <div style={{ paddingTop: 20 }}>
               <pre className='queryOutput'>
-                {isloading ? 'Loading... Please Wait!' : ( output || 'No results available yet. Please enter the URL, your query/question, and then click "Submit" to see the results.' )}
+                {isloading ? ( 
+                    <img className='loader-img' src='assets/duck-loading.gif' alt='this is loading....'/> 
+                ) : ( output || 'No results available yet. Please enter the URL, your query/question, and then click "Submit" to see the results.' )}
               </pre>
             </div>
           </div>
