@@ -17,6 +17,7 @@ Conversation Chat Agent
     - [Google Slide Presentation](#presentation)
     - [Wireframe](#wireframe)
     - [Domain Model](#domain-model)
+    - [Deployed Server](#deployed-server)
 
 3. [Group Members](#group-members)
 
@@ -94,6 +95,16 @@ Conversation Chat Agent
 ### Domain Model
 
 ![Warmseat Domain Model](assets/warmseatDM.png)
+
+### Deployed Server
+
+- Backend
+
+    <https://warmseat-backend.onrender.com/queryvideo>
+
+- Frontend
+
+<!-- frontend link here -->
 
 ## Group Members
 

@@ -17,12 +17,12 @@ function App({ signOut, user }) {
   console.log('user object:', user.attributes.email);
   return (
     <>
-        <h1>Hello {user.attributes.email}</h1>
-        <button style={{ color: 'white' }} onClick={signOut}>Sign out</button>
+        {/* <h1>Hello {user.attributes.email}</h1>
+        <button style={{ color: 'white' }} onClick={signOut}>Sign out</button> */}
         <Router>
         <Header />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route exact path="/" element={<Home user={user} signOut={signOut} />} />
           <Route exact path="/about" element={<About />} />
         </Routes>
       </Router>
